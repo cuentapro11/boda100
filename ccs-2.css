@@ -152,7 +152,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=1080&fit=crop&crop=center');
+    background-image: url('https://i.ibb.co/NdPT9b9n/istockphoto-1190043570-612x612.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -314,8 +314,8 @@ body {
 }
 
 .event-icon {
-    width: 110px;
-    height: 110px;
+    width: 130px;
+    height: 130px;
     margin: 0 auto 1.5rem;
     padding: 0;
     border-radius: 50%;
