@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test - Cambios Aplicados</title>
+    <link rel="stylesheet" href="ccs-2.css">
+</head>
+<body>
+    <h1>Test de Cambios</h1>
+    
+    <div style="margin: 50px; text-align: center;">
+        <h2>Icono de Corbata (Dress Code)</h2>
+        <svg class="tie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <linearGradient id="gTie" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#e8b730"/>
+                    <stop offset="100%" stop-color="#c79816"/>
+                </linearGradient>
+            </defs>
+            <g>
+                <!-- Nudo de la corbata -->
+                <path d="M24 20 L32 28 L40 20 L32 32 L24 20 Z" fill="url(#gTie)"/>
+                <!-- Cuerpo de la corbata -->
+                <path d="M28 32 L32 40 L36 32 L32 60 L28 32 Z" fill="url(#gTie)"/>
+                <!-- Ala izquierda -->
+                <path d="M24 32 L28 32 L32 40 L24 40 Z" fill="url(#gTie)"/>
+                <!-- Ala derecha -->
+                <path d="M40 32 L36 32 L32 40 L40 40 Z" fill="url(#gTie)"/>
+                <!-- Líneas de la corbata -->
+                <path d="M30 35 L34 35" stroke="#c79816" stroke-width="1" opacity="0.6"/>
+                <path d="M30 45 L34 45" stroke="#c79816" stroke-width="1" opacity="0.6"/>
+                <!-- brillo sutil -->
+                <circle cx="32" cy="25" r="2" fill="#fff" opacity="0.5"/>
+            </g>
+        </svg>
+        
+        <p>Este icono debería tener una animación de 4 segundos (más lenta)</p>
+    </div>
+    
+    <div style="margin: 50px; text-align: center;">
+        <h2>Icono de WhatsApp</h2>
+        <div class="whatsapp-icon" style="width: 110px; height: 110px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 50px;">
+            📱
+        </div>
+        <p>Este icono debería tener una animación de 8 segundos (muy lenta)</p>
+    </div>
+</body>
+</html>
