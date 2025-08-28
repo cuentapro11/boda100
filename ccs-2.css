@@ -32,7 +32,7 @@ body {
 
 /* Tipografía */
 .names {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Great Vibes', cursive;
 }
 
 /* Modal de Bienvenida */
@@ -152,6 +152,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
+    height: 100svh; /* soporta barras de navegador móviles */
     background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&h=1080&fit=crop&crop=center');
     background-size: cover;
     background-position: center;
@@ -258,7 +259,7 @@ body {
 }
 
 .section-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Great Vibes', cursive;
     font-size: 3rem;
     color: hsl(var(--brown));
     margin-bottom: 1rem;
@@ -280,8 +281,9 @@ body {
 }
 
 .countdown-number {
+    font-family: 'Cormorant Garamond', serif;
     font-size: 4rem;
-    font-weight: 700;
+    font-weight: 600;
     color: hsl(var(--brown-dark));
     margin-bottom: 0.5rem;
     animation: flip-in 0.6s ease-out;
@@ -313,10 +315,10 @@ body {
 }
 
 .event-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 130px;
+    height: 130px;
     margin: 0 auto 1.5rem;
-    padding: 1rem;
+    padding: 0;
     border-radius: 50%;
     background-color: hsl(var(--gold) / 0.1);
     border: 2px solid hsl(var(--gold));
@@ -342,7 +344,7 @@ body {
 }
 
 .event-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Great Vibes', cursive;
     font-size: 2rem;
     color: hsl(var(--brown));
     margin-bottom: 1.5rem;
@@ -400,10 +402,10 @@ body {
 }
 
 .camera-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 110px;
+    height: 110px;
     margin: 0 auto 3rem;
-    padding: 1rem;
+    padding: 0;
     border-radius: 50%;
     background-color: hsl(var(--gold) / 0.1);
     border: 2px solid hsl(var(--gold));
@@ -419,8 +421,25 @@ body {
 /* Carrusel */
 .carousel-container {
     position: relative;
-    max-width: 800px;
-    margin: 0 auto 2rem;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 2rem;
+    --items-per-view: 1;
+}
+
+@media (min-width: 1024px) {
+    .carousel-container {
+        --items-per-view: 3;
+        width: 100vw;
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+    .gallery-section {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: clip;
+    }
 }
 
 .carousel-track-container {
@@ -435,14 +454,20 @@ body {
 }
 
 .carousel-item {
-    flex: 0 0 100%;
+    flex: 0 0 calc(100% / var(--items-per-view));
     height: 400px;
+    background: #ffffff;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    padding: 8px 8px 24px; /* borde inferior más ancho estilo polaroid */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .carousel-btn {
@@ -515,10 +540,10 @@ body {
 }
 
 .party-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 110px;
+    height: 110px;
     margin: 0 auto 1.5rem;
-    padding: 1rem;
+    padding: 0;
     border-radius: 50%;
     background-color: hsl(var(--gold) / 0.1);
     box-shadow: var(--shadow-elegant);
@@ -528,6 +553,17 @@ body {
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
     animation: gentle-pulse 2s ease-in-out infinite;
+}
+
+.bowtie-icon {
+    animation: bowtie-breathe 2.6s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes bowtie-breathe {
+    0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+    50% { transform: scale(1.05) rotate(0.5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+    100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
 }
 
 .party-card h3 {
@@ -552,10 +588,10 @@ body {
 
 .gift-icon,
 .whatsapp-icon {
-    width: 5rem;
-    height: 5rem;
+    width: 110px;
+    height: 110px;
     margin: 0 auto 2rem;
-    padding: 1rem;
+    padding: 0;
     border-radius: 50%;
     background-color: hsl(var(--gold) / 0.1);
     border: 2px solid hsl(var(--gold));
@@ -569,7 +605,7 @@ body {
 }
 
 .whatsapp-icon {
-    animation: gentle-pulse 2s ease-in-out infinite;
+    animation: gentle-pulse 5s ease-in-out infinite;
 }
 
 /* RSVP */
