@@ -429,8 +429,14 @@ body {
     .carousel-container {
         --items-per-view: 3;
         width: 100vw;
-        margin-left: 50%;
-        transform: translateX(-50%);
+        max-width: 100vw;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+    }
+    .gallery-section {
+        padding-left: 0;
+        padding-right: 0;
+        overflow-x: clip;
     }
 }
 
