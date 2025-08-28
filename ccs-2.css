@@ -555,6 +555,19 @@ body {
     animation: gentle-pulse 2s ease-in-out infinite;
 }
 
+.tie-icon {
+    animation: tie-swing 2.4s ease-in-out infinite;
+    transform-origin: top center;
+}
+
+@keyframes tie-swing {
+    0% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(3deg) translateY(0.5px); }
+    50% { transform: rotate(0deg) translateY(0); }
+    75% { transform: rotate(-3deg) translateY(0.5px); }
+    100% { transform: rotate(0deg) translateY(0); }
+}
+
 .party-card h3 {
     font-size: 1.25rem;
     font-weight: 600;

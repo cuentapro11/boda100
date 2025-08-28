@@ -236,14 +236,19 @@
 
                     <div class="party-card">
                         <div class="party-icon">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/qhviklyi.json"
-                                trigger="loop"
-                                state="loop-animation"
-                                stroke="light"
-                                colors="primary:#e8b730,secondary:#c79816"
-                                style="width:110px;height:110px">
-                            </lord-icon>
+                            <svg class="tie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <linearGradient id="gTie" x1="0" y1="0" x2="1" y2="1">
+                                        <stop offset="0%" stop-color="#e8b730"/>
+                                        <stop offset="100%" stop-color="#c79816"/>
+                                    </linearGradient>
+                                </defs>
+                                <g>
+                                    <path d="M32 2 L40 10 L32 18 L24 10 Z" fill="url(#gTie)"/>
+                                    <path d="M32 18 L44 28 L36 62 L28 62 L20 28 Z" fill="url(#gTie)"/>
+                                    <circle class="tie-knot" cx="32" cy="14" r="3" fill="#fff" opacity="0.3"/>
+                                </g>
+                            </svg>
                         </div>
                         <h3>Dress Code</h3>
                         <p>Una orientación para tu vestuario</p>
