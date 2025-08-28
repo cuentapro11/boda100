@@ -1,0 +1,526 @@
+/* Variables CSS */
+:root {
+    --background: 35 25% 95%;
+    --foreground: 30 20% 15%;
+    --primary: 35 65% 45%;
+    --primary-foreground: 35 25% 95%;
+    --gold: 42 85% 55%;
+    --gold-light: 42 80% 70%;
+    --gold-dark: 42 75% 40%;
+    --brown: 35 65% 45%;
+    --brown-light: 35 50% 60%;
+    --brown-dark: 35 70% 30%;
+    --cream: 35 25% 95%;
+    --warm-white: 35 15% 98%;
+    --shadow-elegant: 0 10px 30px -10px hsl(35 65% 45% / 0.3);
+    --shadow-gold: 0 4px 20px hsl(42 85% 55% / 0.25);
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: hsl(var(--cream));
+    color: hsl(var(--foreground));
+    line-height: 1.6;
+}
+
+/* Tipografía */
+.names {
+    font-family: 'Great Vibes', cursive;
+}
+
+/* Modal de Bienvenida */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: var(--shadow-elegant);
+    border: 2px solid hsl(var(--gold) / 0.2);
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    color: hsl(var(--brown));
+    margin-bottom: 1rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.modal-names {
+    font-size: 2rem;
+    font-family: 'Playfair Display', serif;
+    color: hsl(var(--brown));
+    margin-bottom: 1rem;
+}
+
+.modal-subtitle {
+    color: hsl(var(--foreground) / 0.7);
+    margin-bottom: 2rem;
+}
+
+.modal-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 2rem;
+    padding: 1rem;
+    border-radius: 50%;
+    background-color: hsl(var(--gold) / 0.1);
+    border: 2px solid hsl(var(--gold));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--gold));
+}
+
+.modal-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.btn-wedding {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: none;
+    background: linear-gradient(135deg, hsl(var(--brown)), hsl(var(--gold)));
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: var(--shadow-elegant);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-wedding:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: var(--shadow-gold);
+}
+
+.btn-outline {
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    border: 2px solid hsl(var(--gold));
+    background: transparent;
+    color: hsl(var(--gold));
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-outline:hover {
+    background: hsl(var(--gold));
+    color: white;
+}
+
+/* Reproductor de música */
+.music-player {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1000;
+}
+
+.music-button {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    background: hsl(var(--gold));
+    color: white;
+    cursor: pointer;
+    box-shadow: var(--shadow-gold);
+    transition: all 0.3s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    background-image: url('https://i.pinimg.com/736x/1X/K8/NT/NZJ/1XK8NTNZJ.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.hero-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+
+.hero-text {
+    max-width: 32rem;
+}
+
+.date {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+}
+
+.names {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.ampersand {
+    color: hsl(var(--gold));
+}
+
+.quote {
+    font-size: 1.25rem;
+    font-style: italic;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.scroll-indicator {
+    animation: bounce 2s infinite;
+}
+
+.scroll-mouse {
+    width: 1.5rem;
+    height: 2.5rem;
+    border: 2px solid white;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.scroll-wheel {
+    width: 0.25rem;
+    height: 0.75rem;
+    background: white;
+    border-radius: 0.125rem;
+    margin-top: 0.5rem;
+    animation: pulse 2s infinite;
+}
+
+/* Content */
+.content {
+    position: relative;
+    z-index: 1;
+    margin-top: 100vh;
+    background: linear-gradient(to bottom, transparent 0%, hsl(var(--cream)) 10%);
+}
+
+/* Sections */
+.countdown-section,
+.events-section,
+.gallery-section,
+.party-section,
+.gifts-section,
+.rsvp-section {
+    padding: 4rem 1rem;
+}
+
+.section-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: hsl(var(--brown));
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Countdown */
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.countdown-item {
+    text-align: center;
+}
+
+.countdown-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: hsl(var(--brown));
+    margin-bottom: 0.5rem;
+}
+
+.countdown-label {
+    font-size: 0.875rem;
+    color: hsl(var(--foreground) / 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.countdown-separator {
+    font-size: 2rem;
+    color: hsl(var(--gold));
+    font-weight: 300;
+}
+
+/* Events */
+.events-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-elegant);
+    border: 2px solid hsl(var(--gold) / 0.1);
+    transition: all 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-gold);
+}
+
+.event-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 1.5rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: hsl(var(--gold) / 0.1);
+    border: 2px solid hsl(var(--gold));
+    box-shadow: var(--shadow-elegant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--gold));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+.celebration-icon {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.glass {
+    width: 1.5rem;
+    height: 2rem;
+    background-color: hsl(var(--gold));
+    border-radius: 0.125rem;
+}
+
+.event-title {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2rem;
+    color: hsl(var(--brown));
+    margin-bottom: 1.5rem;
+}
+
+.event-details {
+    margin-bottom: 1.5rem;
+}
+
+.event-details h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: hsl(var(--brown-dark));
+    margin-bottom: 0.5rem;
+}
+
+.event-details p {
+    color: hsl(var(--foreground) / 0.7);
+}
+
+.event-address {
+    font-size: 0.875rem;
+    margin-bottom: 1rem;
+}
+
+/* Party Section */
+.party-container {
+    max-width: 64rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.party-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-elegant);
+    border: 2px solid hsl(var(--gold) / 0.1);
+    transition: all 0.3s ease;
+}
+
+.party-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-gold);
+}
+
+.party-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 1.5rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: hsl(var(--gold) / 0.1);
+    border: 2px solid hsl(var(--gold));
+    box-shadow: var(--shadow-elegant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--gold));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+.tie-icon {
+    animation: tie-breathe 4s ease-in-out infinite;
+    transform-origin: center;
+}
+
+@keyframes tie-breathe {
+    0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+    50% { transform: scale(1.05) rotate(0.5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+    100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
+}
+
+.party-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: hsl(var(--brown));
+    margin-bottom: 1rem;
+}
+
+.party-card p {
+    color: hsl(var(--foreground) / 0.7);
+    margin-bottom: 1.5rem;
+}
+
+/* Gifts */
+.gifts-container,
+.rsvp-container {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.gift-icon,
+.whatsapp-icon {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 2rem;
+    padding: 0;
+    border-radius: 50%;
+    background-color: hsl(var(--gold) / 0.1);
+    border: 2px solid hsl(var(--gold));
+    box-shadow: var(--shadow-elegant);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(var(--gold));
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+    animation: gentle-bounce 4s ease-in-out infinite;
+}
+
+.whatsapp-icon {
+    animation: gentle-pulse 8s ease-in-out infinite;
+}
+
+/* RSVP */
+.hashtag {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: hsl(var(--brown-dark));
+    margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+    background-color: hsl(var(--brown));
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+}
+
+.footer-date {
+    color: hsl(var(--gold));
+    font-size: 0.875rem;
+    margin-top: 1rem;
+}
+
+/* Animaciones */
+@keyframes gentle-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes gentle-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
