@@ -151,8 +151,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
-    height: 100svh; /* soporta barras de navegador móviles */
+    height: 120vh;
+    height: 120svh; /* soporta barras de navegador móviles */
     background-image: url('https://i.ibb.co/NdPT9b9n/istockphoto-1190043570-612x612.jpg');
     background-size: cover;
     background-position: center;
@@ -232,7 +232,7 @@ body {
 .content {
     position: relative;
     z-index: 1;
-    margin-top: 100vh;
+    margin-top: 120vh;
     background: linear-gradient(to bottom, transparent 0%, hsl(var(--cream)) 10%);
 }
 
