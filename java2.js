@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeCountdown();
     initializeCarousel();
     initializeModal();
+    initializeParallax();
 });
 
 // Modal de bienvenida
@@ -269,6 +270,19 @@ function showGifts() {
     const message = "Hola, me gustaría información sobre los regalos para la boda de Rafael y Juana 🎁";
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+}
+
+// Parallax portada
+function initializeParallax() {
+    const hero = document.querySelector('.hero-section');
+    if (!hero) return;
+    function onScroll() {
+        const scrolled = window.pageYOffset || document.documentElement.scrollTop;
+        // Mueve el fondo a una velocidad menor que el scroll (parallax simple)
+        hero.style.backgroundPosition = `center ${Math.round(scrolled * 0.4)}px`;
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
 }
 
 function confirmAttendance() {
