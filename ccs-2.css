@@ -220,7 +220,7 @@ body {
 }
 
 .scroll-indicator {
-    animation: bounce 2s infinite;
+    animation: slow-bounce 6s ease-in-out infinite;
 }
 
 .scroll-mouse {
@@ -239,7 +239,7 @@ body {
     background: white;
     border-radius: 0.125rem;
     margin-top: 0.5rem;
-    animation: pulse 2s infinite;
+    animation: slow-pulse 6s ease-in-out infinite;
 }
 
 /* Content */
@@ -339,7 +339,7 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-pulse 4s ease-in-out infinite;
+    animation: very-slow-pulse 6s ease-in-out infinite;
 }
 
 .celebration-icon {
@@ -419,17 +419,17 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-pulse 4s ease-in-out infinite;
+    animation: very-slow-pulse 6s ease-in-out infinite;
 }
 
 .tie-icon {
-    animation: tie-breathe 4s ease-in-out infinite;
+    animation: tie-breathe 6s ease-in-out infinite;
     transform-origin: center;
 }
 
 @keyframes tie-breathe {
     0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
-    50% { transform: scale(1.05) rotate(0.5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
+    50% { transform: scale(1.1) rotate(1deg); filter: drop-shadow(0 6px 12px rgba(0,0,0,0.3)); }
     100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
 }
 
@@ -468,11 +468,11 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-bounce 4s ease-in-out infinite;
+    animation: very-slow-bounce 6s ease-in-out infinite;
 }
 
 .whatsapp-icon {
-    animation: gentle-pulse 8s ease-in-out infinite;
+    animation: extremely-slow-pulse 10s ease-in-out infinite;
 }
 
 /* RSVP */
@@ -503,24 +503,28 @@ body {
     margin-top: 1rem;
 }
 
-/* Animaciones */
-@keyframes gentle-bounce {
+/* Animaciones MUY LENTAS para que se vea la diferencia */
+@keyframes very-slow-bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-20px); }
 }
 
-@keyframes gentle-pulse {
+@keyframes very-slow-pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
 }
 
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(-10px); }
-    60% { transform: translateY(-5px); }
+@keyframes extremely-slow-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
 }
 
-@keyframes pulse {
+@keyframes slow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes slow-pulse {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    50% { opacity: 0.3; }
 }
