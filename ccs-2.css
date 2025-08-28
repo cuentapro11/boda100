@@ -555,12 +555,12 @@ body {
     animation: gentle-pulse 2s ease-in-out infinite;
 }
 
-.bowtie-icon {
-    animation: bowtie-breathe 2.6s ease-in-out infinite;
+.tie-icon {
+    animation: tie-breathe 2.6s ease-in-out infinite;
     transform-origin: center;
 }
 
-@keyframes bowtie-breathe {
+@keyframes tie-breathe {
     0% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
     50% { transform: scale(1.05) rotate(0.5deg); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2)); }
     100% { transform: scale(1) rotate(0deg); filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); }
@@ -605,7 +605,7 @@ body {
 }
 
 .whatsapp-icon {
-    animation: gentle-pulse 5s ease-in-out infinite;
+    animation: gentle-pulse 8s ease-in-out infinite;
 }
 
 /* RSVP */

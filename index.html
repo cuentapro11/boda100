@@ -236,22 +236,24 @@
 
                     <div class="party-card">
                         <div class="party-icon">
-                            <svg class="bowtie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="tie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="gBow" x1="0" y1="0" x2="1" y2="1">
+                                    <linearGradient id="gTie" x1="0" y1="0" x2="1" y2="1">
                                         <stop offset="0%" stop-color="#e8b730"/>
                                         <stop offset="100%" stop-color="#c79816"/>
                                     </linearGradient>
                                 </defs>
                                 <g>
-                                    <!-- Ala izquierda del moño -->
-                                    <path d="M8 20 C14 14, 26 18, 28 26 C26 34, 14 38, 8 32 Z" fill="url(#gBow)"/>
-                                    <!-- Nudo central -->
-                                    <rect x="28" y="24" width="8" height="16" rx="3" fill="url(#gBow)"/>
-                                    <!-- Ala derecha del moño -->
-                                    <path d="M56 20 C50 14, 38 18, 36 26 C38 34, 50 38, 56 32 Z" fill="url(#gBow)"/>
+                                    <!-- Nudo de la corbata -->
+                                    <path d="M20 15 L32 25 L44 15 L32 35 L20 15 Z" fill="url(#gTie)"/>
+                                    <!-- Cuerpo de la corbata -->
+                                    <path d="M30 35 L32 45 L34 35 L32 55 L30 35 Z" fill="url(#gTie)"/>
+                                    <!-- Ala izquierda -->
+                                    <path d="M20 35 L30 35 L32 45 L20 45 Z" fill="url(#gTie)"/>
+                                    <!-- Ala derecha -->
+                                    <path d="M44 35 L34 35 L32 45 L44 45 Z" fill="url(#gTie)"/>
                                     <!-- brillo sutil -->
-                                    <circle cx="32" cy="32" r="2" fill="#fff" opacity="0.35"/>
+                                    <circle cx="32" cy="30" r="1.5" fill="#fff" opacity="0.4"/>
                                 </g>
                             </svg>
                         </div>
