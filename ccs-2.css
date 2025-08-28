@@ -428,6 +428,9 @@ body {
 @media (min-width: 1024px) {
     .carousel-container {
         --items-per-view: 3;
+        width: 100vw;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
 }
 
