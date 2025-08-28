@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rafael & Juana - Invitación de Boda</title>
     <link rel="stylesheet" href="ccs-2.css">
+    <link rel="stylesheet" href="animations-only.css">
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
 </head>
@@ -236,22 +237,27 @@
 
                     <div class="party-card">
                         <div class="party-icon">
-                            <svg class="bowtie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="tie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="gBow" x1="0" y1="0" x2="1" y2="1">
+                                    <linearGradient id="gTie" x1="0" y1="0" x2="1" y2="1">
                                         <stop offset="0%" stop-color="#e8b730"/>
                                         <stop offset="100%" stop-color="#c79816"/>
                                     </linearGradient>
                                 </defs>
                                 <g>
-                                    <!-- Ala izquierda del moño -->
-                                    <path d="M8 20 C14 14, 26 18, 28 26 C26 34, 14 38, 8 32 Z" fill="url(#gBow)"/>
-                                    <!-- Nudo central -->
-                                    <rect x="28" y="24" width="8" height="16" rx="3" fill="url(#gBow)"/>
-                                    <!-- Ala derecha del moño -->
-                                    <path d="M56 20 C50 14, 38 18, 36 26 C38 34, 50 38, 56 32 Z" fill="url(#gBow)"/>
+                                    <!-- Nudo de la corbata -->
+                                    <path d="M24 20 L32 28 L40 20 L32 32 L24 20 Z" fill="url(#gTie)"/>
+                                    <!-- Cuerpo de la corbata -->
+                                    <path d="M28 32 L32 40 L36 32 L32 60 L28 32 Z" fill="url(#gTie)"/>
+                                    <!-- Ala izquierda -->
+                                    <path d="M24 32 L28 32 L32 40 L24 40 Z" fill="url(#gTie)"/>
+                                    <!-- Ala derecha -->
+                                    <path d="M40 32 L36 32 L32 40 L40 40 Z" fill="url(#gTie)"/>
+                                    <!-- Líneas de la corbata -->
+                                    <path d="M30 35 L34 35" stroke="#c79816" stroke-width="1" opacity="0.6"/>
+                                    <path d="M30 45 L34 45" stroke="#c79816" stroke-width="1" opacity="0.6"/>
                                     <!-- brillo sutil -->
-                                    <circle cx="32" cy="32" r="2" fill="#fff" opacity="0.35"/>
+                                    <circle cx="32" cy="25" r="2" fill="#fff" opacity="0.5"/>
                                 </g>
                             </svg>
                         </div>

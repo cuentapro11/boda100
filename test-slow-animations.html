@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Animaciones MUY Lentas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 50px;
+            background: #f5f5f5;
+            text-align: center;
+        }
+        
+        .test-icon {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(45deg, #e8b730, #c79816);
+            border-radius: 50%;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 40px;
+        }
+        
+        .super-slow-pulse {
+            animation: super-slow-pulse 8s ease-in-out infinite;
+        }
+        
+        .super-slow-bounce {
+            animation: super-slow-bounce 8s ease-in-out infinite;
+        }
+        
+        @keyframes super-slow-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+        
+        @keyframes super-slow-bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-30px); }
+        }
+        
+        .info {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #e8b730;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎯 Test de Animaciones MUY Lentas</h1>
+    
+    <div class="info">
+        <h2>Si las animaciones están funcionando, deberías ver:</h2>
+        <ul style="text-align: left; display: inline-block;">
+            <li>El icono 🎯 se agranda y encoge muy lentamente (8 segundos)</li>
+            <li>El icono 🎈 sube y baja muy lentamente (8 segundos)</li>
+        </ul>
+    </div>
+    
+    <div class="test-icon super-slow-pulse">🎯</div>
+    <p><strong>Pulso Super Lento - 8 segundos</strong></p>
+    
+    <div class="test-icon super-slow-bounce">🎈</div>
+    <p><strong>Rebote Super Lento - 8 segundos</strong></p>
+    
+    <div class="timer" id="timer">Tiempo: 0s</div>
+    
+    <div class="info">
+        <h3>Instrucciones:</h3>
+        <p>1. Observa los iconos durante al menos 10 segundos</p>
+        <p>2. Deberías ver que se mueven muy lentamente</p>
+        <p>3. Si no ves movimiento, hay un problema con CSS o el navegador</p>
+    </div>
+    
+    <script>
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            document.getElementById('timer').textContent = `Tiempo: ${seconds}s`;
+        }, 1000);
+    </script>
+</body>
+</html>
