@@ -605,7 +605,7 @@ body {
 }
 
 .whatsapp-icon {
-    animation: gentle-pulse 2s ease-in-out infinite;
+    animation: gentle-pulse 5s ease-in-out infinite;
 }
 
 /* RSVP */
