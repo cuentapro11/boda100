@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Simple de Animación</title>
+    <style>
+        .test-box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 50px auto;
+            animation: test-animation 5s ease-in-out infinite;
+        }
+        
+        @keyframes test-animation {
+            0% { transform: scale(1); background: red; }
+            50% { transform: scale(2); background: blue; }
+            100% { transform: scale(1); background: red; }
+        }
+        
+        .info {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <h1>Test Simple de Animación</h1>
+        <p>Si ves la caja roja cambiar de tamaño y color cada 5 segundos, las animaciones funcionan.</p>
+        <p>Si no ves cambios, hay un problema con CSS o el navegador.</p>
+    </div>
+    
+    <div class="test-box"></div>
+    
+    <div class="info">
+        <div class="timer" id="timer">Tiempo: 0s</div>
+        <p>La caja debería cambiar cada 5 segundos</p>
+    </div>
+    
+    <script>
+        let seconds = 0;
+        setInterval(() => {
+            seconds++;
+            document.getElementById('timer').textContent = `Tiempo: ${seconds}s`;
+        }, 1000);
+    </script>
+</body>
+</html>

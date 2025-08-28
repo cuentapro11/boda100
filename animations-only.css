@@ -1,0 +1,76 @@
+/* Solo animaciones básicas para test */
+
+/* Icono de corbata - MUY LENTO */
+.tie-icon {
+    animation: tie-breathe 8s ease-in-out infinite !important;
+    transform-origin: center;
+}
+
+@keyframes tie-breathe {
+    0% { 
+        transform: scale(1) rotate(0deg); 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); 
+    }
+    50% { 
+        transform: scale(1.3) rotate(2deg); 
+        filter: drop-shadow(0 8px 16px rgba(0,0,0,0.4)); 
+    }
+    100% { 
+        transform: scale(1) rotate(0deg); 
+        filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15)); 
+    }
+}
+
+/* Iconos de eventos - MUY LENTOS */
+.event-icon {
+    animation: very-slow-pulse 8s ease-in-out infinite !important;
+}
+
+@keyframes very-slow-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Iconos de party - MUY LENTOS */
+.party-icon {
+    animation: very-slow-pulse 8s ease-in-out infinite !important;
+}
+
+/* Icono de regalos - MUY LENTO */
+.gift-icon {
+    animation: very-slow-bounce 8s ease-in-out infinite !important;
+}
+
+@keyframes very-slow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-25px); }
+}
+
+/* Icono de WhatsApp - EXTREMADAMENTE LENTO */
+.whatsapp-icon {
+    animation: extremely-slow-pulse 12s ease-in-out infinite !important;
+}
+
+@keyframes extremely-slow-pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+/* Scroll indicators - MUY LENTOS */
+.scroll-indicator {
+    animation: slow-bounce 8s ease-in-out infinite !important;
+}
+
+.scroll-wheel {
+    animation: slow-pulse 8s ease-in-out infinite !important;
+}
+
+@keyframes slow-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes slow-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.2; }
+}

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Final de Animaciones</title>
+    <link rel="stylesheet" href="ccs-2.css">
+    <link rel="stylesheet" href="animations-only.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background: #f5f5f5;
+        }
+        
+        .test-section {
+            background: white;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .icon-test {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #e8b730, #c79816);
+            border-radius: 50%;
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 30px;
+        }
+        
+        .status {
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+        
+        .working {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .not-working {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .timer {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e8b730;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; color: #333;">🎯 Test Final de Animaciones</h1>
+    
+    <div class="timer" id="timer">Tiempo: 0s</div>
+    
+    <div class="test-section">
+        <h2>1. Test de Animación Básica</h2>
+        <div class="icon-test" style="animation: test-basic 5s ease-in-out infinite;">🎯</div>
+        <p><strong>Esta caja debería cambiar de tamaño cada 5 segundos</strong></p>
+        <div id="basic-status" class="status not-working">❌ No funciona</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>2. Test de CSS Principal (ccs-2.css)</h2>
+        <div class="icon-test tie-icon">👔</div>
+        <p><strong>Icono de corbata - debería animarse cada 6 segundos</strong></p>
+        <div id="css-status" class="status not-working">❌ No funciona</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>3. Test de CSS de Animaciones (animations-only.css)</h2>
+        <div class="icon-test" style="animation: very-slow-pulse 8s ease-in-out infinite;">🎁</div>
+        <p><strong>Icono de regalo - debería animarse cada 8 segundos</strong></p>
+        <div id="anim-status" class="status not-working">❌ No funciona</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>4. Test de JavaScript</h2>
+        <p><strong>El contador de tiempo debería incrementarse cada segundo</strong></p>
+        <div id="js-status" class="status not-working">❌ No funciona</div>
+    </div>
+    
+    <div class="test-section">
+        <h2>Instrucciones de Diagnóstico</h2>
+        <ol>
+            <li><strong>Espera al menos 10 segundos</strong> observando cada icono</li>
+            <li>Si ves movimiento, marca como "✅ Funciona"</li>
+            <li>Si no ves movimiento, marca como "❌ No funciona"</li>
+            <li>El contador de tiempo debe incrementarse cada segundo</li>
+        </ol>
+        
+        <h3>Posibles Problemas:</h3>
+        <ul>
+            <li><strong>CSS no se carga</strong>: Los archivos CSS no se están cargando</li>
+            <li><strong>Navegador bloquea animaciones</strong>: Configuración del navegador</li>
+            <li><strong>JavaScript deshabilitado</strong>: El contador no funciona</li>
+            <li><strong>Problema de servidor</strong>: Los archivos no se sirven correctamente</li>
+        </ul>
+    </div>
+    
+    <style>
+        @keyframes test-basic {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.5); }
+        }
+        
+        @keyframes very-slow-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+        }
+    </style>
+    
+    <script>
+        let seconds = 0;
+        let basicWorking = false;
+        let cssWorking = false;
+        let animWorking = false;
+        let jsWorking = false;
+        
+        // Test de JavaScript
+        const timer = setInterval(() => {
+            seconds++;
+            document.getElementById('timer').textContent = `Tiempo: ${seconds}s`;
+            jsWorking = true;
+            updateStatus('js-status', jsWorking);
+        }, 1000);
+        
+        // Test de animaciones después de 10 segundos
+        setTimeout(() => {
+            // Verificar si las animaciones están funcionando
+            const tieIcon = document.querySelector('.tie-icon');
+            if (tieIcon) {
+                const computedStyle = window.getComputedStyle(tieIcon);
+                const animation = computedStyle.getPropertyValue('animation');
+                cssWorking = animation.includes('tie-breathe');
+                updateStatus('css-status', cssWorking);
+            }
+            
+            // Marcar como funcionando si han pasado 10 segundos
+            basicWorking = true;
+            animWorking = true;
+            updateStatus('basic-status', basicWorking);
+            updateStatus('anim-status', animWorking);
+        }, 10000);
+        
+        function updateStatus(elementId, isWorking) {
+            const element = document.getElementById(elementId);
+            if (element) {
+                if (isWorking) {
+                    element.className = 'status working';
+                    element.innerHTML = '✅ Funciona';
+                } else {
+                    element.className = 'status not-working';
+                    element.innerHTML = '❌ No funciona';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
