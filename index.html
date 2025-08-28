@@ -236,17 +236,22 @@
 
                     <div class="party-card">
                         <div class="party-icon">
-                            <svg class="tie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg class="bowtie-icon" width="110" height="110" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <defs>
-                                    <linearGradient id="gTie" x1="0" y1="0" x2="1" y2="1">
+                                    <linearGradient id="gBow" x1="0" y1="0" x2="1" y2="1">
                                         <stop offset="0%" stop-color="#e8b730"/>
                                         <stop offset="100%" stop-color="#c79816"/>
                                     </linearGradient>
                                 </defs>
                                 <g>
-                                    <path d="M32 2 L40 10 L32 18 L24 10 Z" fill="url(#gTie)"/>
-                                    <path d="M32 18 L44 28 L36 62 L28 62 L20 28 Z" fill="url(#gTie)"/>
-                                    <circle class="tie-knot" cx="32" cy="14" r="3" fill="#fff" opacity="0.3"/>
+                                    <!-- Ala izquierda del moño -->
+                                    <path d="M8 20 C14 14, 26 18, 28 26 C26 34, 14 38, 8 32 Z" fill="url(#gBow)"/>
+                                    <!-- Nudo central -->
+                                    <rect x="28" y="24" width="8" height="16" rx="3" fill="url(#gBow)"/>
+                                    <!-- Ala derecha del moño -->
+                                    <path d="M56 20 C50 14, 38 18, 36 26 C38 34, 50 38, 56 32 Z" fill="url(#gBow)"/>
+                                    <!-- brillo sutil -->
+                                    <circle cx="32" cy="32" r="2" fill="#fff" opacity="0.35"/>
                                 </g>
                             </svg>
                         </div>
