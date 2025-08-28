@@ -2,7 +2,7 @@
 let isPlaying = false;
 let player = null;
 let currentSlide = 0;
-const totalSlides = 12;
+let totalSlides = 0;
 let enableMusic = false;
 
 // Inicializar cuando el DOM esté listo
@@ -164,27 +164,41 @@ function initializeCountdown() {
 }
 
 // Carrusel
+function getItemsPerView() {
+    return window.innerWidth >= 1024 ? 3 : 1;
+}
+
+function getItemWidth() {
+    const container = document.querySelector('.carousel-track-container');
+    const itemsPerView = getItemsPerView();
+    return container ? container.clientWidth / itemsPerView : 0;
+}
+
 function initializeCarousel() {
     const track = document.getElementById('carouselTrack');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
     const currentSlideElement = document.getElementById('currentSlide');
     const totalSlidesElement = document.getElementById('totalSlides');
+    const items = track ? track.children : [];
     
+    totalSlides = items.length;
     totalSlidesElement.textContent = totalSlides;
     updateSlideCounter();
     
     prevBtn.addEventListener('click', () => {
+        const maxIndex = Math.max(0, totalSlides - getItemsPerView());
         if (currentSlide > 0) {
             currentSlide--;
         } else {
-            currentSlide = totalSlides - 1;
+            currentSlide = maxIndex;
         }
         updateCarousel();
     });
     
     nextBtn.addEventListener('click', () => {
-        if (currentSlide < totalSlides - 1) {
+        const maxIndex = Math.max(0, totalSlides - getItemsPerView());
+        if (currentSlide < maxIndex) {
             currentSlide++;
         } else {
             currentSlide = 0;
@@ -194,19 +208,29 @@ function initializeCarousel() {
     
     // Auto-play del carrusel
     setInterval(() => {
-        if (currentSlide < totalSlides - 1) {
+        const maxIndex = Math.max(0, totalSlides - getItemsPerView());
+        if (currentSlide < maxIndex) {
             currentSlide++;
         } else {
             currentSlide = 0;
         }
         updateCarousel();
     }, 4000);
+
+    // Recalcular en redimensionar
+    window.addEventListener('resize', () => {
+        const maxIndex = Math.max(0, totalSlides - getItemsPerView());
+        if (currentSlide > maxIndex) {
+            currentSlide = maxIndex;
+        }
+        updateCarousel();
+    });
 }
 
 function updateCarousel() {
     const track = document.getElementById('carouselTrack');
-    const translateX = -currentSlide * 100;
-    track.style.transform = `translateX(${translateX}%)`;
+    const shiftPixels = currentSlide * getItemWidth();
+    track.style.transform = `translateX(-${shiftPixels}px)`;
     updateSlideCounter();
 }
 
