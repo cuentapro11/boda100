@@ -328,7 +328,7 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-pulse 2s ease-in-out infinite;
+    animation: gentle-pulse 4s ease-in-out infinite;
 }
 
 .celebration-icon {
@@ -415,7 +415,7 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-bounce 2s ease-in-out infinite;
+    animation: gentle-bounce 4s ease-in-out infinite;
 }
 
 /* Carrusel */
@@ -552,11 +552,11 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-pulse 2s ease-in-out infinite;
+    animation: gentle-pulse 4s ease-in-out infinite;
 }
 
 .tie-icon {
-    animation: tie-breathe 2.6s ease-in-out infinite;
+    animation: tie-breathe 4s ease-in-out infinite;
     transform-origin: center;
 }
 
@@ -601,7 +601,7 @@ body {
     justify-content: center;
     color: hsl(var(--gold));
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
-    animation: gentle-bounce 2s ease-in-out infinite;
+    animation: gentle-bounce 4s ease-in-out infinite;
 }
 
 .whatsapp-icon {
